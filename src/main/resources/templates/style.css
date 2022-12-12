@@ -1,0 +1,70 @@
+body{
+    background: #111;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    width: 400px;
+    border: 1px dashed white;
+    margin: 50px auto;
+}
+
+h1{
+    margin: 50px;
+    text-shadow: 1px 1px 2px;
+}
+
+.content form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+select{
+    margin-bottom: 10px;
+    width: 50px;
+    background: #444;
+    border: 1px solid #888;
+    font-weight: bold;
+}
+
+input{
+    margin-bottom: 10px;
+    background: #444;
+    border: 1px solid #888;
+    font-weight: bold;
+}
+
+.sub{
+    font-size: 18px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 50px;
+}
+
+.nick{
+    width: 200px;
+    transform: translateX(-12px);
+}
+
+td{
+    border: 1px solid white;
+}
+
+.noTd{
+    border: 0;
+}

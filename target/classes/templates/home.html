@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            color: white;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/itemimages/10/29/102962_v6.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .content{
+            width: 450px;
+            padding: 20px;
+            margin: 50px auto;
+            background: rgba(0,0,0,0.25);
+            box-shadow: 0 0 10px #888;
+        }
+
+        h1{
+            margin: 50px;
+            text-shadow: 2px 2px 5px;
+        }
+
+        .content:hover{
+            background-color: rgba(0,0,0,0.8);
+            transition: background-color 1s ease-in-out;
+        }
+
+        .content form{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item{
+            width: 200px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        select{
+            margin-bottom: 10px;
+            width: 50px;
+            background: #444;
+            border: 1px solid #888;
+            font-weight: bold;
+            color: white;
+        }
+
+        input{
+            margin-bottom: 10px;
+            background: #444;
+            border: 1px solid #888;
+            font-weight: bold;
+            color: white;
+        }
+
+        .sub{
+            font-size: 18px;
+            width: 200px;
+            height: 30px;
+            margin-bottom: 50px;
+        }
+
+        .nick{
+            width: 200px;
+            transform: translateX(-12px);
+        }
+
+        td{
+            border: 1px solid white;
+        }
+
+        .noTd{
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Hotel Cristal</h1>
+</header>
+<div class="content">
+    <form th:action="@{/hotel/room}" method="post" >
+        <div class="item">
+        Liczba miejsc:
+        <select th:object="${room}" th:field="*{capacity}">
+            <option th:value="1">1</option>
+            <option th:value="2">2</option>
+            <option th:value="3">3</option>
+            <option th:value="4">4</option>
+        </select>
+        </div>
+        Data od:
+        <input th:object="${booking}" th:field="*{startDate}" type="date" min="2021-06-25">
+        Data do:
+        <input th:object="${booking}" th:field="*{endDate}" type="date" min="2021-06-25">
+        Apartament:
+        <input type="checkbox" th:object="${room}" th:field="*{isApartment}">
+        Balkon:
+        <input type="checkbox" th:object="${room}" th:field="*{isBalcony}">
+        Specjalny pokój programistów Javy
+        <input type="checkbox" th:object="${room}" th:field="*{isSpecialJavaProgrammersRoom}">
+        <input class="sub" type="submit" value="Szukaj">
+    </form>
+</div>
+
+
+</body>
+</html>
